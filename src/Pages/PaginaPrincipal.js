@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 import '../Styles/PaginaPrincipal.css';
 
@@ -46,7 +48,7 @@ const PaginaPrincipal = () => {
             <section id='ListaProductos'>
                 {productos.map((producto, index) => (
                     <div id='Caja' key={index}>
-                        <a href='/Producto' onClick={() => idDelProducto(producto.id_producto)}><img className='IMGProductos' src={producto.img_producto} alt={producto.id_producto} /></a>
+                        <Link to="/Producto" onClick={() => idDelProducto(producto.id_producto)}><img className='IMGProductos' src={producto.img_producto} alt={producto.id_producto} /></Link>
                         <h4><p className='Pro'>{producto.nombre_producto}</p>${producto.precio}</h4>
                     </div>
                 ))}
